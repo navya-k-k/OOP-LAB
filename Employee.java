@@ -1,37 +1,59 @@
 import java.util.*;
-public class Employee
+class Employee
 {
-	String e_id;
-	int sal;
-	String e_name;
-	void read()
+	int no,sal;
+	String name;
+	public void read()
 	{
 		Scanner sc=new Scanner(System.in);
-		System.out.print("\nEnter Employee id:");
-		e_id=sc.nextLine();
-                System.out.print("Enter Employee Name:");
-                e_name=sc.nextLine();
-		System.out.print("Enter Monthly Salary:");
-                sal=sc.nextInt();
+		System.out.print("Enter Employee ID :");
+		no=Integer.parseInt(sc.nextLine());
+		System.out.print("Enter Employee Name:");
+		name=sc.nextLine();
+		System.out.print("Enter Salary:");
+		sal=Integer.parseInt(sc.nextLine());
 	}
-	void disp()
+	public void disp()
 	{
-		System.out.println("\nEMPLOYEE DETAILS\n");
-		System.out.println("--------------------");
-		System.out.println("EMPLOYEE ID    ="+e_id);
-		System.out.println("EMPLOYEE NAME  ="+e_name);
-		System.out.println("YEARLY SALARY  ="+sal*12);
+		System.out.println("\nEMPLOYEE ID  = "+no);
+		System.out.println("EMPLOYEE NAME ="+name);
+		System.out.println("SALARY   ="+sal);
 	}
-
+}
+class Employee_array
+{
 	public static void main(String args[])
 	{
-		System.out.println("-----EMPLOYEE 1-----");
-		Employee e1=new Employee();
-		e1.read();
-		e1.disp();
-		System.out.println("\n-----EMPLOYEE 2-----");
-                Employee e2=new Employee();
-                e2.read();
-                e2.disp();
+		int i,n,id;
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter number of employees:");
+		n=Integer.parseInt(sc.nextLine());
+		Employee e[]=new Employee[n]; // array of objects
+		System.out.println("\n---Enter Employee detail ---\n");
+		for(i=0;i<n;i++)
+		{
+			e[i]=new Employee();
+			e[i].read();
+		}
+		System.out.println("\nDISPLAY DETAILS");
+		for(i=0;i<n;i++)
+		{
+			//e[i]=new Employee();
+			e[i].disp();
+		}
+
+		System.out.println("\n\nSEARCH EMPLOYEE\n");
+		System.out.print("Enter ID to search:");
+		id=Integer.parseInt(sc.nextLine());
+		for(i=0;i<n;i++)
+		{
+			if(e[i].no==id) //if id found
+			{
+				e[i].disp();
+				break;
+			} 
+		}
+
+
 	}
 }
