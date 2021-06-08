@@ -27,7 +27,7 @@ System.out.println("RAM manufacturer="+manufacturer);
 }
 
 }
-public class Computer_09
+public class Computer
 {
 public static void main(String args[])
 {
