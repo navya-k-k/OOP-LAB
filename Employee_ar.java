@@ -20,7 +20,7 @@ class Employee
 		System.out.println("SALARY   ="+sal);
 	}
 }
-class Employee_array
+class Employee_ar
 {
 	public static void main(String args[])
 	{
